@@ -15,6 +15,7 @@ class UserService {
   static final UserService _singleton = UserService._internal();
 
   String? _token;
+  String? get token => _token;
 
   UserService._internal();
   final String SHARED_KEY_USER = 'current_user';
