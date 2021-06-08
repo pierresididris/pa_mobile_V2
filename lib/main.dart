@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pa_fjt_mobile/services/authentication_api.dart';
 import 'package:pa_fjt_mobile/views/dashboard_page.dart';
+import 'package:pa_fjt_mobile/views/main_view.dart';
 import 'package:pa_fjt_mobile/views/registration_page.dart';
 import 'package:pa_fjt_mobile/views/request_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,12 +40,11 @@ class PamApp extends StatelessWidget {
         routes: {
           '/': (BuildContext context) {
             return Scaffold(
-                body: (UserService().isAuthenticated)
-                    ? DashboardPage()
-                    : LoginPage());
+                body:
+                    (UserService().isAuthenticated) ? MainView() : LoginPage());
           },
           NamedRoute.CONNECTION_ROUTE: (BuildContext context) => LoginPage(),
-          NamedRoute.HOME_ROUTE: (BuildContext context) => DashboardPage(),
+          NamedRoute.HOME_ROUTE: (BuildContext context) => MainView(),
           NamedRoute.REQUESTS_ROUTE: (BuildContext context) => RequestsPage(),
           NamedRoute.INSCRIPTION_ROUTE: (BuildContext context) =>
               RegisterPage(),

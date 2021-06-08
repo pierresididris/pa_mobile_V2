@@ -6,8 +6,10 @@ import 'package:pa_fjt_mobile/widgets/request_widget.dart';
 import 'file_widget.dart';
 import 'flat_widget.dart';
 
-
 class WidgetContainer extends StatelessWidget {
+  final Function(int)? switchTabRequest;
+
+  WidgetContainer({this.switchTabRequest});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,9 @@ class WidgetContainer extends StatelessWidget {
           FlatWidget(),
           FileWidget(),
           RentWidget(),
-          RequestWidget()
+          RequestWidget(
+            switchTabRequest: switchTabRequest,
+          )
         ],
       ),
       // padding: EdgeInsets.all(15),

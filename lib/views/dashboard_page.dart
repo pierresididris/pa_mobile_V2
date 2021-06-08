@@ -7,6 +7,10 @@ import 'package:pa_fjt_mobile/widgets/title_page.dart';
 import 'package:pa_fjt_mobile/widgets/widget_container.dart';
 
 class DashboardPage extends StatefulWidget {
+  final Function(int)? switchTabRequest;
+
+  DashboardPage({this.switchTabRequest});
+
   @override
   State<StatefulWidget> createState() {
     return DashboardPageState();
@@ -50,7 +54,9 @@ class DashboardPageState extends State<DashboardPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       // TitlePage(),
-                      WidgetContainer(),
+                      WidgetContainer(
+                        switchTabRequest: widget.switchTabRequest,
+                      ),
                     ]),
               ),
             ),
